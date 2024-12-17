@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Primary Meta Tags -->
+        <title> Image Hover Background Change</title>
+        <meta name="title" content="Image Hover Background Change" />
+        <meta name="description" content="Image Hover and also on hover Background Change of section" />
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://key-semantics-five.vercel.app/" />
+        <meta property="og:title" content="Image Hover Background Change" />
+        <meta property="og:description" content="Image Hover and also on hover Background Change of section" />
+        <meta property="og:image" content="./meta-img.png" />
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://key-semantics-five.vercel.app/" />
+        <meta property="twitter:title" content="Image Hover Background Change" />
+        <meta property="twitter:description" content="Image Hover and also on hover Background Change of section" />
+        <meta property="twitter:image" content="./meta-img.png" />
+        
+        <!-- Meta Tags Generated with https://metatags.io -->
+        <style>
+            body {
+                background-size: cover;
+                background-position: center;
+                transition: background-image 0.5s ease-in-out;
+            }
+        </style>
+    </head>
+
+    <body class="flex items-center justify-center min-h-screen bg-gray-200 p-4" id="section-bg">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="relative overflow-hidden rounded-lg group transform transition-transform duration-500"
+                onmouseover="changeBackground('assets/images/png/bg-img.png')" onmouseout="resetBackground()">
+                <img src="assets/images/png/boy.png" alt="Image 1"
+                    class="w-full h-[250px] object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div
+                    class="absolute bottom-0 bg-black bg-opacity-70 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-full">
+                    Boy 1
+                </div>
+            </div>
+            <div class="relative overflow-hidden rounded-lg group"
+                onmouseover="changeBackground('assets/images/png/bg2-img.png')" onmouseout="resetBackground()">
+                <img src="assets/images/png/boy1.png" alt="Image 2"
+                    class="w-full h-[250px] object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div
+                    class="absolute bottom-0 bg-black bg-opacity-70 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-full">
+                    Boy 2
+                </div>
+            </div>
+            <div class="relative overflow-hidden rounded-lg group"
+                onmouseover="changeBackground('assets/images/png/bg3-img.png')" onmouseout="resetBackground()">
+                <img src="assets/images/png/boy3.png" alt="Image 3"
+                    class="w-full h-[250px] object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <div
+                    class="absolute bottom-0 bg-black bg-opacity-70 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-full">
+                    Boy 3
+                </div>
+            </div>
+        </div>
+        <script>
+            const section = document.getElementById('section-bg');
+
+            function changeBackground(imageUrl) {
+                section.style.backgroundImage = `url(${imageUrl})`;
+            }
+
+            function resetBackground() {
+                section.style.backgroundImage = 'none';
+            }
+        </script>
+    </body>
+
+</html>
