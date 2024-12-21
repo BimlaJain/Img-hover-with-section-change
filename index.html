@@ -4,75 +4,120 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="shortcut icon" href="assets/images/png/boy.png" type="image/x-icon">
+        <script src="https://cdn.tailwindcss.com"></script>        
+        <meta name="title" content="Image Hover & Click Background Change" />
+        <meta name="description" content="Image Hover and Click Background Change of Section" />
         <!-- Primary Meta Tags -->
-        <title> Image Hover Background Change</title>
-        <meta name="title" content="Image Hover Background Change" />
-        <meta name="description" content="Image Hover and also on hover Background Change of section" />
+    <title>Img Hover & Bg Change</title>
+        <meta name="title" content="Img Hover & Bg Change" />
+        <meta name="description" content="Make image hover with background image change" />
         
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://img-hover-with-section-change.vercel.app/" />
-        <meta property="og:title" content="Image Hover Background Change" />
-        <meta property="og:description" content="Image Hover and also on hover Background Change of section" />
+        <meta property="og:title" content="Img Hover & Bg Change" />
+        <meta property="og:description" content=" Make marketing a growth machine" />
         <meta property="og:image" content="/meta-img.png" />
         
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://img-hover-with-section-change.vercel.app/" />
-        <meta property="twitter:title" content="Image Hover Background Change" />
-        <meta property="twitter:description" content="Image Hover and also on hover Background Change of section" />
+        <meta property="twitter:title" content="Img Hover & Bg Change" />
+        <meta property="twitter:description" content=" Make marketing a growth machine" />
         <meta property="twitter:image" content="/meta-img.png" />
         
         <!-- Meta Tags Generated with https://metatags.io -->
+
         <style>
             body {
                 background-size: cover;
                 background-position: center;
                 transition: background-image 0.5s ease-in-out;
+                position: relative;
+            }
+
+            #section-bg {
+                position: relative;
+                z-index: 1;
+                background-size: cover;
+                background-position: center;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            #background-layer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                transition: opacity 0.5s ease-in-out;
+                z-index: 0;
+                opacity: 0;
+            }
+
+            #section-bg-content {
+                position: relative;
+                z-index: 2;
             }
         </style>
     </head>
 
     <body class="flex items-center justify-center min-h-screen bg-gray-200 p-4" id="section-bg">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div id="background-layer"></div>
+        <div id="section-bg-content" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div class="relative overflow-hidden rounded-lg group transform transition-transform duration-500"
-                onmouseover="changeBackground('assets/images/png/bg-img.png')" onmouseout="resetBackground()">
+                onmouseover="previewBackground('assets/images/png/bg-img.png')" onmouseout="resetPreviewBackground()"
+                onclick="setBackground('assets/images/png/bg-img.png')">
                 <img src="assets/images/png/boy.png" alt="Image 1"
-                    class="w-full h-[250px] object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    class="w-full h-[250px] object-cover transform transition-transform duration-700 group-hover:scale-110">
                 <div
                     class="absolute bottom-0 bg-black bg-opacity-70 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-full">
                     Boy 1
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg group"
-                onmouseover="changeBackground('assets/images/png/bg2-img.png')" onmouseout="resetBackground()">
+
+            <div class="relative overflow-hidden rounded-lg group transform transition-transform duration-500"
+                onmouseover="previewBackground('assets/images/png/bg2-img.png')" onmouseout="resetPreviewBackground()"
+                onclick="setBackground('assets/images/png/bg2-img.png')">
                 <img src="assets/images/png/boy1.png" alt="Image 2"
-                    class="w-full h-[250px] object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    class="w-full h-[250px] object-cover transform transition-transform duration-700 group-hover:scale-110">
                 <div
                     class="absolute bottom-0 bg-black bg-opacity-70 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-full">
                     Boy 2
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg group"
-                onmouseover="changeBackground('assets/images/png/bg3-img.png')" onmouseout="resetBackground()">
+
+            <div class="relative overflow-hidden rounded-lg group transform transition-transform duration-500"
+                onmouseover="previewBackground('assets/images/png/bg3-img.png')" onmouseout="resetPreviewBackground()"
+                onclick="setBackground('assets/images/png/bg3-img.png')">
                 <img src="assets/images/png/boy3.png" alt="Image 3"
-                    class="w-full h-[250px] object-cover transform transition-transform duration-500 group-hover:scale-110">
+                    class="w-full h-[250px] object-cover transform transition-transform duration-700 group-hover:scale-110">
                 <div
                     class="absolute bottom-0 bg-black bg-opacity-70 text-white text-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 w-full">
                     Boy 3
                 </div>
             </div>
         </div>
+
         <script>
+            const backgroundLayer = document.getElementById('background-layer');
             const section = document.getElementById('section-bg');
 
-            function changeBackground(imageUrl) {
-                section.style.backgroundImage = `url(${imageUrl})`;
+            function previewBackground(imageUrl) {
+                backgroundLayer.style.backgroundImage = `url(${imageUrl})`;
+                backgroundLayer.style.opacity = '1';
             }
 
-            function resetBackground() {
-                section.style.backgroundImage = 'none';
+            function resetPreviewBackground() {
+                backgroundLayer.style.opacity = '0';
+            }
+
+            function setBackground(imageUrl) {
+                section.style.backgroundImage = `url(${imageUrl})`;
+                backgroundLayer.style.opacity = '0'; 
             }
         </script>
     </body>
