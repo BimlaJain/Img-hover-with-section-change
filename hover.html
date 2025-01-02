@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="assets/images/png/boy.png" type="image/x-icon">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <meta name="title" content="Image Hover & Click Background Change" />
+        <meta name="description" content="Image Hover and Click Background Change of Section" />
+        <title>Img Hover & Bg Change</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            .dot {
+                width: 15px;
+                height: 15px;
+                background-color: #3498db;
+                border-radius: 50%;
+                animation: pulse 1.5s infinite ease-in-out;
+            }
+
+            .dot:nth-child(2) {
+                animation-delay: 0.3s;
+            }
+
+            .dot:nth-child(3) {
+                animation-delay: 0.6s;
+            }
+
+            @keyframes pulse {
+
+                0%,
+                100% {
+                    transform: scale(0.8);
+                    opacity: 0.8;
+                }
+
+                50% {
+                    transform: scale(1.2);
+                    opacity: 1;
+                }
+            }
+
+            .bg-change-btn {
+                background-color: #9b59b6;
+                color: white;
+                padding: 15px 25px;
+                border-radius: 8px;
+                font-size: 1.2rem;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .bg-change-btn:hover {
+                background-color: #3498db;
+                transform: scale(1.05);
+            }
+        </style>
+    </head>
+
+    <body class="flex justify-center items-center min-h-screen bg-cover bg-center">
+
+        <div class="flex flex-col justify-center items-center space-y-5">
+            <h1 class="font-bold text-5xl text-center text-black">Loading Dots</h1>
+
+            <div class="flex gap-3 justify-center">
+                <div class="dot" id="dot1"></div>
+                <div class="dot" id="dot2"></div>
+                <div class="dot" id="dot3"></div>
+            </div>
+            <button class="bg-change-btn mt-10" onclick="changeDotColor()">Change Dot Color</button>
+        </div>
+
+        <script>
+            function changeDotColor() {
+                const colors = ['#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#3498db'];
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach(dot => {
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    dot.style.backgroundColor = randomColor;
+                });
+            }
+        </script>
+
+    </body>
+
+</html>
