@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Staggered Reveal Animation</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                background-color: #f8fafc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            .list {
+                list-style: none;
+                padding: 0;
+            }
+
+            .list-item {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="max-w-7xl mx-auto py-16 px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="group relative w-full max-w-xs mx-auto transform transition-all duration-500 hover:scale-105">
+                    <div
+                        class="relative bg-white rounded-xl shadow-xl overflow-hidden transition-transform duration-500 group-hover:rotate-y-180">
+                        <!-- Front of Card -->
+                        <div
+                            class="flex flex-col items-center p-8 space-y-4 bg-gradient-to-t from-indigo-500 to-indigo-700 text-white">
+                            <h2 class="text-3xl font-semibold">Basic Plan</h2>
+                            <p class="text-4xl font-bold">$19/month</p>
+                            <ul class="space-y-2">
+                                <li>10 Projects</li>
+                                <li>5GB Storage</li>
+                                <li>Email Support</li>
+                            </ul>
+                            <button
+                                class="bg-white text-indigo-500 py-2 px-4 rounded-lg font-semibold transform transition-all duration-300 group-hover:scale-105">
+                                Select Plan
+                            </button>
+                        </div>
+                        <!-- Back of Card (on hover) -->
+                        <div
+                            class="absolute inset-0 bg-gray-900 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 space-y-4 rounded-xl">
+                            <h2 class="text-3xl font-semibold">Extra Benefits</h2>
+                            <p class="text-xl">Get started with the basic features. Ideal for solo users and small projects.</p>
+                            <button class="bg-indigo-500 text-white py-2 px-4 rounded-lg font-semibold">Start Now</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Standard Plan -->
+                <div class="group relative w-full max-w-xs mx-auto transform transition-all duration-500 hover:scale-105">
+                    <div
+                        class="relative bg-white rounded-xl shadow-xl overflow-hidden transition-transform duration-500 group-hover:rotate-y-180">
+                        <!-- Front of Card -->
+                        <div
+                            class="flex flex-col items-center p-8 space-y-4 bg-gradient-to-t from-teal-500 to-teal-700 text-white">
+                            <h2 class="text-3xl font-semibold">Standard Plan</h2>
+                            <p class="text-4xl font-bold">$39/month</p>
+                            <ul class="space-y-2">
+                                <li>50 Projects</li>
+                                <li>20GB Storage</li>
+                                <li>Priority Support</li>
+                            </ul>
+                            <button
+                                class="bg-white text-teal-500 py-2 px-4 rounded-lg font-semibold transform transition-all duration-300 group-hover:scale-105">
+                                Select Plan
+                            </button>
+                        </div>
+                        <!-- Back of Card (on hover) -->
+                        <div
+                            class="absolute inset-0 bg-gray-900 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 space-y-4 rounded-xl">
+                            <h2 class="text-3xl font-semibold">Extra Benefits</h2>
+                            <p class="text-xl">Perfect for small businesses or growing teams. Unlock more features.</p>
+                            <button class="bg-teal-500 text-white py-2 px-4 rounded-lg font-semibold">Start Now</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Premium Plan -->
+                <div class="group relative w-full max-w-xs mx-auto transform transition-all duration-500 hover:scale-105">
+                    <div
+                        class="relative bg-white rounded-xl shadow-xl overflow-hidden transition-transform duration-500 group-hover:rotate-y-180">
+                        <!-- Front of Card -->
+                        <div
+                            class="flex flex-col items-center p-8 space-y-4 bg-gradient-to-t from-orange-500 to-red-600 text-white">
+                            <h2 class="text-3xl font-semibold">Premium Plan</h2>
+                            <p class="text-4xl font-bold">$79/month</p>
+                            <ul class="space-y-2">
+                                <li>Unlimited Projects</li>
+                                <li>100GB Storage</li>
+                                <li>24/7 Support</li>
+                            </ul>
+                            <button
+                                class="bg-white text-orange-500 py-2 px-4 rounded-lg font-semibold transform transition-all duration-300 group-hover:scale-105">
+                                Select Plan
+                            </button>
+                        </div>
+                        <!-- Back of Card (on hover) -->
+                        <div
+                            class="absolute inset-0 bg-gray-900 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 space-y-4 rounded-xl">
+                            <h2 class="text-3xl font-semibold">Extra Benefits</h2>
+                            <p class="text-xl">For large teams or enterprises, offering all features and maximum support.</p>
+                            <button class="bg-red-600 text-white py-2 px-4 rounded-lg font-semibold">Start Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+
+</html>
