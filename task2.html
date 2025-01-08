@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Glowing Text</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @keyframes bounce {
+                0% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            .bouncing-text {
+                animation: bounce 2s ease-in-out infinite;
+            }
+
+            @keyframes glow {
+                0% {
+                    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.6);
+                    color: #fff;
+                }
+
+                50% {
+                    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7), 0 0 45px rgba(255, 255, 255, 0.5);
+                    color: #ff77ff;
+                }
+
+                100% {
+                    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.6);
+                    color: #fff;
+                }
+            }
+
+            .glowing-text {
+                animation: glow 2s ease-in-out infinite;
+            }
+        </style>
+    </head>
+
+    <body class="bg-black h-screen flex items-center justify-center">
+        <div class="animate-bounce">
+            <h1 class="text-5xl font-bold glowing-text text-white h-32 flex justify-center items-center">
+                Front-End Development
+            </h1>
+        </div>
+
+    </body>
+
+</html>
