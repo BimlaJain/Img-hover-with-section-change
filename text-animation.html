@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Text animation</title>
     <style>
-p {
-  background: linear-gradient(90deg, #000, #fff, #000);
-  background-size: 80%;
-  animation: animate 9s linear infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
-}
+      p {
+        background: linear-gradient(90deg, #000, #fff, #000);
+        background-size: 80%;
+        animation: animate 9s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+      }
 
-@keyframes animate {
-  0% {
-    background-position: -500%;
-  }
-  100% {
-    background-position: 500%;
-  }
-}
+      @keyframes animate {
+        0% {
+          background-position: -500%;
+        }
+
+        100% {
+          background-position: 500%;
+        }
+      }
     </style>
-</head>
-<body class="bg-black flex items-center justify-center m-0 px-5 min-h-screen">
+  </head>
+
+  <body class="bg-black flex items-center justify-center m-0 px-5 min-h-screen">
     <div class="text-container">
-        <p class=" sm:text-5xl text-xl relative uppercase tracking-widest overflow-hidden font-sans bg-no-repeat">Lorem ipsum dolor, sit amet consectetur  </p>
+      <p class=" sm:text-5xl text-xl relative uppercase tracking-widest overflow-hidden font-sans bg-no-repeat">Lorem
+        ipsum dolor, sit amet consectetur </p>
     </div>
-</body>
+  </body>
+
 </html>
