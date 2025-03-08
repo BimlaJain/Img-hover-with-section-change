@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <link rel="shortcut icon" href="assets/images/png/boy1.png" type="image/x-icon">
+    <style>
+        body {
+ background-color: #F8ECD9; 
+ margin: 0; 
+}
+
+#artboard {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transform: translate(-50% -50%);
+}
+
+.box {
+  fill: #9A572D;
+}
+    </style>
+</head>
+<body>
+   
+    <svg id="artboard" viewBox="0 0 500 500" width="125" height="125">
+        <g id="Loader">
+            <path id="TopBox" d="M100.7 22.2h100v100h-100z" class="box" transform="rotate(-45 150.707 72.22)" />
+            <path id="RightBox" d="M177.8 99.3h100v100h-100z" class="box" transform="rotate(-45 227.781 149.296)" />
+            <path id="LeftBox" d="M22.2 100.7h100v100h-100z" class="box" transform="rotate(-45 72.217 150.709)" />
+            <path id="DownBox" d="M99.3 177.8h100v100h-100z" class="box" transform="rotate(-45 149.291 227.785)" />
+        </g>
+    
+    </svg>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+            var up = document.getElementById("TopBox");
+            var right = document.getElementById("RightBox");
+            var down = document.getElementById("DownBox");
+            var left = document.getElementById("LeftBox");
+            var boxes = document.getElementsByClassName("box");
+            var tl = new TimelineMax();
+
+            tl
+                .to(up, .5, { css: { fill: "#0F1411" } })
+                .to(right, .5, { css: { fill: "#0F1411" } })
+                .to(down, .5, { css: { fill: "#0F1411" } })
+                .to(left, .5, { css: { fill: "#0F1411" } })
+                .to(boxes, .5, { rotation: 45, transformOrigin: "center center" });
+
+            tl.repeat(-1);
+
+    </script>
+</body>
+</html>
