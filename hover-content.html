@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hover Content</title>
+        <link rel="shortcut icon" href="assets/images/png/bg-img.png" type="image/x-icon" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+        <style>
+            .container:hover .card:not(:hover) {
+                filter: blur(5px) brightness(0.5);
+                transition: filter 0.3s ease;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-800 text-white overflow-hidden">
+        <section>
+            <div class="container mx-auto flex justify-center items-center min-h-screen gap-5">
+                <div
+                    class="card relative w-72 aspect-[9/12] cursor-pointer overflow-hidden rounded-lg transition-transform duration-1000 ease-in-out group">
+                    <img src="https://images.pexels.com/photos/1078981/pexels-photo-1078981.jpeg" alt="Beach"
+                        class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 scale-x-0 origin-right transition-transform duration-1000 group-hover:scale-x-100">
+                    </div>
+                    <div
+                        class="absolute inset-0 top-1/2 bg-black bg-opacity-50 scale-x-0 origin-right transition-transform duration-1000 delay-300 group-hover:scale-x-100">
+                    </div>
+
+                    <div
+                        class="absolute inset-5 top-auto z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        <h2 class="text-3xl font-extrabold leading-tight" data-splitting>The Beach</h2>
+                        <p class="text-sm mt-2" data-splitting>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perspiciatis rem temporibus consectetur at reprehenderit nemo.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="card relative w-72 aspect-[9/12] cursor-pointer overflow-hidden rounded-lg transition-transform duration-1000 ease-in-out group">
+                    <img src="https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg" alt="City"
+                        class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 scale-x-0 origin-right transition-transform duration-1000 group-hover:scale-x-100">
+                    </div>
+                    <div
+                        class="absolute inset-0 top-1/2 bg-black bg-opacity-50 scale-x-0 origin-right transition-transform duration-1000 delay-300 group-hover:scale-x-100">
+                    </div>
+
+                    <div
+                        class="absolute inset-5 top-auto z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        <h2 class="text-3xl font-extrabold leading-tight" data-splitting>The City</h2>
+                        <p class="text-sm mt-2" data-splitting>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perspiciatis rem temporibus consectetur at reprehenderit nemo.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="card relative w-72 aspect-[9/12] cursor-pointer overflow-hidden rounded-lg transition-transform duration-1000 ease-in-out group">
+                    <img src="https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg" alt="Night"
+                        class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" />
+
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 scale-x-0 origin-right transition-transform duration-1000 group-hover:scale-x-100">
+                    </div>
+                    <div
+                        class="absolute inset-0 top-1/2 bg-black bg-opacity-50 scale-x-0 origin-right transition-transform duration-1000 delay-300 group-hover:scale-x-100">
+                    </div>
+
+                    <div
+                        class="absolute inset-5 top-auto z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        <h2 class="text-3xl font-extrabold leading-tight" data-splitting>The Night</h2>
+                        <p class="text-sm mt-2" data-splitting>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Perspiciatis rem temporibus consectetur at reprehenderit nemo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+
+</html>
